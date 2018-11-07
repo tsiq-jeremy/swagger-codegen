@@ -94,12 +94,7 @@ export class {{classname}} {
             queryParameters['{{baseName}}'] = {{paramName}}.toISOString();
         {{/isDateTime}}
         {{^isDateTime}}
-            {{#isDate}}
-            queryParameters['{{baseName}}'] = {{paramName}}.toISOString();
-            {{/isDate}}
-            {{^isDate}}
-            queryParameters['{{baseName}}'] = <string><any>{{paramName}};
-            {{/isDate}}
+			queryParameters['{{baseName}}'] = <string><any>{{paramName}};
         {{/isDateTime}}
         }
         {{/isListContainer}}
